@@ -1,0 +1,3104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+}
+
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background: white;
+    border-right: 1px solid #eaeaea;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.logo {
+    padding: 10px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
+.logo img {
+    height: 32px;
+    width: auto;
+}
+
+.nav-menu {
+    padding: 16px 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #1a1f36;
+    gap: 12px;
+}
+
+.nav-item .icon {
+    width: 20px;
+    text-align: center;
+}
+
+.nav-item .arrow {
+    margin-left: auto;
+    color: #666;
+}
+
+.nav-item:hover {
+    background: #f8f9fa;
+}
+
+.nav-group.active .nav-item.active {
+    background: #f0f4ff;
+    color: #4285f4;
+}
+
+.submenu {
+    background: #fafafa;
+}
+
+.submenu .nav-item {
+    padding-left: 48px;
+    font-size: 14px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #4285f4;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.beta {
+    font-size: 11px;
+    background: #ff8c00;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: auto;
+}
+
+.nav-item.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.nav-item.locked .arrow {
+    opacity: 0.5;
+}
+
+.submenu .nav-item:not(.brand) {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.nav-item.brand {
+    cursor: pointer;
+}
+
+.logo-full {
+    height: 40px;
+    width: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .logo-full {
+        height: 32px;
+    }
+}
+
+/* Reset all nav items to default color */
+.nav-item {
+    color: #1a1f36;  /* Dark gray color for locked items */
+}
+
+/* Style for unlocked items */
+.nav-item.active,
+.nav-group.active > .nav-item,
+.submenu .nav-item.brand {
+    color: #4285f4;  /* Blue color only for Sales Performance and Brand */
+}
+
+/* Keep locked items gray and faded */
+.nav-item.locked {
+    color: #1a1f36;
+    opacity: 0.5;
+}
+
+/* Style for submenu items */
+.submenu .nav-item:not(.brand) {
+    color: #1a1f36;
+    opacity: 0.5;
+}
+
+/* Style for active category */
+.submenu .nav-item.active {
+    color: #4285f4;  /* Blue color for Category */
+}
+
+/* Style for locked items including Brand */
+.submenu .nav-item.locked {
+    color: #1a1f36;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Remove any specific Brand styling */
+.submenu .nav-item:not(.active) {
+    color: #1a1f36;
+    opacity: 0.5;
+}
+
+.main-content {
+    margin-left: 240px;
+    padding: 24px;
+}
+
+.page-header {
+    font-size: 24px;
+    color: #1a1f36;
+    font-weight: 500;
+    margin: 0; /* Remove margin since it's handled by container */
+}
+
+.category-filter {
+    margin: 24px 0;  /* Add margin for spacing */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.category-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.category-dropdown {
+    width: 200px;
+    padding: 8px 12px;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #1a1f36;
+    background-color: white;
+    cursor: pointer;
+}
+
+.category-dropdown:hover {
+    border-color: #4285f4;
+}
+
+.category-dropdown:focus {
+    outline: none;
+    border-color: #4285f4;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.1);
+}
+
+/* Add these new styles */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.header-controls {
+    display: flex;
+    gap: 24px;  /* Increased gap to accommodate labels */
+    align-items: center;
+}
+
+.header-dropdown {
+    padding: 8px 12px;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #1a1f36;
+    background-color: white;
+    cursor: pointer;
+    min-width: 140px;
+}
+
+.header-dropdown:hover {
+    border-color: #4285f4;
+}
+
+.header-dropdown:focus {
+    outline: none;
+    border-color: #4285f4;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.1);
+}
+
+/* Add these styles for the labels */
+.dropdown-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropdown-label {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Add these styles for the graph section */
+.graph-section {
+    margin-top: 24px;
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+}
+
+.graph-title {
+    font-size: 18px;
+    color: #1a1f36;
+    margin-bottom: 8px;
+}
+
+.date-range {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.metrics-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.metric:hover {
+    background-color: #f8f9fa;
+}
+
+.metric.active {
+    background-color: #f0f4ff;
+}
+
+.metric-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.metric-value {
+    font-size: 48px;
+    font-weight: 600;
+    color: #1a1f36;
+    line-height: 1.2;
+    display: flex;  /* Make it a flex container */
+    align-items: center;  /* Center items vertically */
+    gap: 12px;  /* Space between value and change */
+}
+
+.metric-change {
+    font-size: 24px;  /* Slightly larger for better visibility */
+    margin-top: 0;  /* Remove top margin since we're using flex */
+}
+
+.metric-change.positive {
+    color: #00C48C;
+}
+
+.metric-change.negative {
+    color: #ea4335;
+}
+
+.graph-container {
+    height: 300px;
+    margin-top: 24px;
+}
+
+/* Add styles for locked metrics */
+.metric.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.metric.locked:hover {
+    background-color: transparent;
+}
+
+/* Keep existing metric styles */
+.metric {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.metric.active {
+    background-color: #f0f4ff;
+    opacity: 1;
+}
+
+.table-section {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.date-range {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.table-controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.table-controls button {
+    padding: 8px 16px;
+    border: 1px solid #eaeaea;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.table-controls button.active {
+    background: #f0f4ff;
+    color: #4285f4;
+    border-color: #4285f4;
+}
+
+.brands-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+
+.brands-table th,
+.brands-table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.brands-table th {
+    color: #666;
+    font-weight: normal;
+}
+
+.positive {
+    color: #00c853;
+}
+
+.negative {
+    color: #ff4444;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.pagination button {
+    padding: 8px;
+    border: 1px solid #eaeaea;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination span {
+    color: #666;
+}
+
+.brand-link {
+    color: #4285f4;
+    text-decoration: none;
+}
+
+.change {
+    font-weight: 500;
+}
+
+.change.positive {
+    color: #34a853;
+}
+
+.change.negative {
+    color: #ea4335;
+}
+
+.pagination {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.pagination button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #666;
+    padding: 4px 8px;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Add this new style for blurred text */
+.brand-link.blurred {
+    color: transparent;
+    text-shadow: 0 0 8px rgba(66, 133, 244, 0.5);
+    user-select: none;
+}
+
+/* Keep existing table styles */
+
+/* Add styles for the chart section */
+.chart-container {
+    position: relative;
+    height: 400px;
+    margin-top: 24px;
+    padding: 16px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+}
+
+.chart-header {
+    margin-bottom: 16px;
+}
+
+.chart-header h3 {
+    font-size: 16px;
+    color: #1a1f36;
+    margin-bottom: 4px;
+}
+
+.date-range {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Add blur effect for chart points */
+canvas#scatterChart {
+    filter: blur(4px);
+}
+
+/* Add these new styles */
+.products-section {
+    margin-top: 24px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    padding: 24px;
+}
+
+.products-header {
+    margin-bottom: 24px;
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background: #f8f9fa;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #1a1f36;
+    cursor: pointer;
+}
+
+.analyze-btn {
+    color: #4285f4;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-bar {
+    margin-bottom: 16px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+}
+
+.product-image {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.product-name {
+    color: #1a1f36;
+    font-size: 14px;
+}
+
+.product-id {
+    color: #666;
+    font-size: 12px;
+}
+
+.blurred {
+    color: transparent;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    user-select: none;
+}
+
+img.blurred {
+    filter: blur(4px);
+}
+
+/* Add styles for side-by-side layout */
+.charts-container {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.chart-quadrant {
+    flex: 1;
+    min-width: 45%;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    padding: 24px;
+}
+
+.products-section {
+    flex: 1;
+    min-width: 45%;
+    max-height: 500px;  /* Match quadrant height */
+    overflow-y: auto;  /* Allow scrolling for table */
+}
+
+/* Adjust table for smaller width */
+.products-table {
+    font-size: 13px;  /* Slightly smaller font */
+}
+
+.product-cell {
+    gap: 8px;  /* Reduce gap */
+}
+
+.product-img {
+    width: 32px;  /* Smaller images */
+    height: 32px;
+}
+
+/* Update table styles */
+.brands-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.brands-table th,
+.brands-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.brands-table th {
+    color: #666;
+    font-weight: normal;
+}
+
+.brand-link {
+    color: #4285f4;
+    text-decoration: none;
+}
+
+.change {
+    white-space: nowrap;
+}
+
+.change.positive {
+    color: #34a853;
+}
+
+.change.negative {
+    color: #ea4335;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.header-actions button {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.btn-total {
+    background: #f0f4ff;
+    color: #4285f4;
+    border: none;
+}
+
+.btn-share, .btn-export {
+    background: white;
+    border: 1px solid #eaeaea;
+    color: #1a1f36;
+}
+
+.table-footer {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Add crown icon styles */
+.crown-icon {
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    color: #1a1f36;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Analytics row styles */
+.analytics-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+    padding: 0 24px;
+    margin-left: 280px;  /* Account for sidebar width */
+}
+
+.chart-container, .products-section {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    padding: 24px;
+    min-width: 0;
+    height: 500px;
+}
+
+.products-section {
+    overflow-y: auto;
+}
+
+/* Update header alignment */
+.chart-header h3,
+.products-header h3 {
+    text-align: left;
+    margin: 0;
+    font-size: 16px;
+    color: #1a1f36;
+}
+
+.date-range {
+    display: block;
+    text-align: left;
+    color: #666;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* Updated submenu styles with vertical line */
+.sub-menu {
+    position: relative;
+    padding-left: 48px;
+    margin: 8px 0;
+}
+
+.vertical-line {
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #eaeaea;
+}
+
+.sub-links {
+    position: relative;
+}
+
+.sub-link {
+    display: block;
+    padding: 8px 16px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+}
+
+.sub-link.active {
+    color: #4285f4;
+}
+
+.sub-link:hover {
+    color: #4285f4;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.sort-controls {
+    display: flex;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.sort-controls button {
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.arrow-down {
+    font-size: 12px;
+    color: #666;
+}
+
+.search-box {
+    margin-bottom: 16px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-box input::placeholder {
+    color: #999;
+}
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.products-table th,
+.products-table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.products-table th {
+    color: #666;
+    font-weight: normal;
+}
+
+.chart-area {
+    height: 400px;
+    background: #fafafa;
+    border-radius: 4px;
+    margin-top: 24px;
+}
+
+.empty-state {
+    max-width: 800px;
+    margin: 48px auto;
+    text-align: center;
+    padding: 24px;
+}
+
+.empty-state h1 {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 48px;
+}
+
+.video-container {
+    position: relative;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    border-radius: 12px;
+    margin-bottom: 48px;
+    overflow: hidden;
+}
+
+.video-container img {
+    width: 100%;
+    height: auto;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    color: #4e54c8;
+}
+
+.features {
+    margin-bottom: 48px;
+}
+
+.features h3 {
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features li {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.features li::before {
+    content: "•";
+    color: #4e54c8;
+    margin-right: 8px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.contact-us {
+    background: #4e54c8;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.learn-more {
+    color: #4e54c8;
+    text-decoration: none;
+    padding: 12px 24px;
+}
+
+.top-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 24px;
+    background: white;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.controls-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding-left: 48px;  /* Add padding to move everything right */
+}
+
+.control-label {
+    color: #666;
+    font-size: 14px;
+}
+
+.marketplace-selector,
+.date-selector,
+.comparison-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: white;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.flag-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.dropdown i {
+    font-size: 12px;
+    color: #666;
+}
+
+.dropdown:hover {
+    border-color: #4285f4;
+}
+
+/* Add these new styles to your existing CSS */
+.category-header {
+    padding: 24px;
+    border-bottom: 1px solid #eaeaea;
+    background: white;
+}
+
+.category-header h1 {
+    font-size: 24px;
+    color: #1a1f36;
+    margin-bottom: 16px;
+}
+
+.controls-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: white;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.flag-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.category-selector {
+    background: white;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    padding: 12px;
+}
+
+.category-label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.category-value {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.subscribe-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4285f4;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.subscribe-btn i {
+    font-size: 16px;
+}
+
+/* Add to your existing CSS */
+.nav-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.nav-item.enabled {
+    opacity: 1 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
+
+.nav-item.active {
+    background: #f0f4ff;
+    color: #4285f4;
+}
+
+.nav-item.active.enabled {
+    opacity: 1;
+    background: #f0f4ff;
+    color: #4285f4;
+}
+
+.submenu .nav-item.active.enabled {
+    background: transparent;
+    color: #4285f4;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #4285f4;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px;
+    background: white;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.left-section h1 {
+    font-size: 24px;
+    color: #1a1f36;
+    margin-bottom: 16px;
+}
+
+.category-dropdown {
+    background: white;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    padding: 12px;
+    width: 300px;
+    cursor: pointer;
+}
+
+.category-dropdown:hover {
+    border-color: #4285f4;
+}
+
+.category-label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.category-value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #1a1f36;
+}
+
+/* Adjust existing top-controls to work with new layout */
+.top-controls {
+    border-bottom: none;
+    padding: 0;
+}
+
+.main-nav {
+    background: white;
+    border-bottom: 1px solid #eaeaea;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.nav-left .logo img {
+    height: 35px;  /* Increased from 28px to 35px */
+    width: auto;
+    margin-right: 32px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    font-size: 16px;
+}
+
+.nav-links .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2a2f3d;  /* Dark color matching the screenshot */
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.nav-links .nav-item i {
+    font-size: 12px;
+    color: #666;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-contact {
+    padding: 8px 16px;
+    color: #ff6433;
+    background: transparent;
+    border: 1px solid #ff6433;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-started {
+    padding: 8px 16px;
+    color: white;
+    background: #ff6433;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-login {
+    padding: 8px 16px;
+    color: #1a1f36;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Adjust existing container to account for fixed header */
+.container {
+    margin-top: 64px; /* Height of the header */
+}
+
+.performance-section {
+    padding: 24px;
+    background: white;
+}
+
+.section-header {
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
+    font-size: 18px;
+    color: #1a1f36;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.date-range {
+    color: #666;
+    font-size: 14px;
+}
+
+.metrics-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.metric {
+    flex: 1;
+    padding: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.metric:hover {
+    background: #f8f9fa;
+}
+
+.metric.active {
+    background: #f0f4ff;
+}
+
+.metric-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 14px;
+}
+
+.metric-value {
+    font-size: 48px;
+    font-weight: 600;
+    color: #1a1f36;
+    line-height: 1.2;
+    display: flex;  /* Make it a flex container */
+    align-items: center;  /* Center items vertically */
+    gap: 12px;  /* Space between value and change */
+}
+
+.metric-change {
+    font-size: 24px;  /* Slightly larger for better visibility */
+    margin-top: 0;  /* Remove top margin since we're using flex */
+}
+
+.metric-change.positive {
+    color: #00C48C;
+}
+
+.metric-change.negative {
+    color: #ea4335;
+}
+
+.view-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.view-by {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #666;
+    font-size: 14px;
+}
+
+.view-btn {
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #666;
+}
+
+.view-btn.active {
+    background: #f0f4ff;
+    color: #4285f4;
+}
+
+.chart-controls {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.show-change {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 14px;
+}
+
+.chart-tabs {
+    display: flex;
+    gap: 16px;
+    color: #666;
+    font-size: 14px;
+}
+
+.chart-container {
+    height: 300px;
+    margin-top: 24px;
+}
+
+.metric.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.metric.disabled:hover {
+    background: transparent;
+}
+
+.metric.disabled input {
+    cursor: not-allowed;
+}
+
+.metric .blurred {
+    color: transparent;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    user-select: none;
+}
+
+.metric .metric-change.blurred.positive {
+    color: transparent;
+    text-shadow: 0 0 8px rgba(52, 168, 83, 0.5);
+}
+
+.metric .metric-change.blurred.negative {
+    color: transparent;
+    text-shadow: 0 0 8px rgba(234, 67, 53, 0.5);
+}
+
+.chart-hook {
+    position: absolute;
+    right: 35%;  /* Adjust this to position over October 2024 */
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.95);  /* Made slightly more opaque */
+    padding: 16px 24px;  /* Added more horizontal padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;  /* Center the text */
+    z-index: 10;  /* Ensure it's above the chart */
+}
+
+.hook-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 200px;  /* Ensure minimum width */
+}
+
+.hook-content span {
+    color: #1a1f36;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.hook-btn {
+    background: #4285f4;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.hook-btn:hover {
+    background: #3367d6;
+}
+
+.competitive-landscape {
+    margin-top: 24px;
+    padding: 24px;
+    background: white;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+}
+
+.landscape-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.landscape-header h2 {
+    font-size: 18px;
+    color: #1a1f36;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.landscape-header h2 i {
+    color: #666;
+    font-size: 16px;
+}
+
+.scatter-container {
+    height: 300px;  /* Made shorter */
+    position: relative;
+    padding: 8px;  /* Added some padding */
+}
+
+.top-brands {
+    margin-top: 24px;
+    padding: 24px;
+    background: white;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+}
+
+.brands-header {
+    margin-bottom: 24px;
+}
+
+.brands-header h2 {
+    font-size: 18px;
+    color: #1a1f36;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.brands-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.control-btn {
+    padding: 8px 16px;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    background: white;
+    color: #1a1f36;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.control-btn.active {
+    background: #f0f4ff;
+    color: #4285f4;
+    border-color: #4285f4;
+}
+
+.brands-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.brands-table th,
+.brands-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 14px;
+}
+
+.brands-table th {
+    color: #666;
+    font-weight: normal;
+}
+
+.brands-table th i {
+    margin-left: 4px;
+    font-size: 12px;
+}
+
+.brand-link {
+    color: #4285f4;
+    text-decoration: none;
+}
+
+.change {
+    font-weight: 500;
+}
+
+.change.positive {
+    color: #34a853;
+}
+
+.change.negative {
+    color: #ea4335;
+}
+
+/* Blur styles */
+.brands-table tr.blurred td {
+    color: transparent;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.brands-table .brand-link.blurred {
+    color: transparent;
+    text-shadow: 0 0 8px rgba(66, 133, 244, 0.5);
+}
+
+.brands-table .change.positive.blurred {
+    color: transparent;
+    text-shadow: 0 0 8px rgba(52, 168, 83, 0.5);
+}
+
+.brands-table .change.negative.blurred {
+    color: transparent;
+    text-shadow: 0 0 8px rgba(234, 67, 53, 0.5);
+}
+
+/* Add these styles to your existing CSS */
+.products-section {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.time-range {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 13px;
+}
+
+.filters-row {
+    margin-bottom: 24px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #eaeaea;
+    background: white;
+    color: #666;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: #edf6ff;
+    color: #4285f4;
+    border-color: #4285f4;
+}
+
+.analyze-btn {
+    padding: 8px 16px;
+    background: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.product-name {
+    font-size: 13px;
+    color: #1a1f36;
+}
+
+.product-asin {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Add these styles for the change indicators */
+.negative {
+    color: #d93025;
+}
+
+.positive {
+    color: #0cce6b;
+}
+
+/* Blur styles */
+.blur {
+    filter: blur(4px);
+    user-select: none;
+}
+
+.blur-row {
+    filter: blur(4px);
+    user-select: none;
+}
+
+/* Make sure these styles are not being overridden */
+.blur-row td,
+.blur-row .product-cell,
+.blur-row .product-info {
+    filter: blur(4px);
+    user-select: none;
+}
+
+/* Premium message */
+.premium-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4285f4;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 1;
+}
+
+/* New styles for generator page */
+.generator-main {
+    margin-top: 64px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    min-height: calc(100vh - 64px);
+    color: #1a1f36;
+    padding-bottom: 100px;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    color: #1a1f36;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.search-container {
+    max-width: 900px;  /* Slightly reduced to match design */
+    margin: 0 auto;
+}
+
+.search-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 16px 24px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #4285f4;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.1);
+}
+
+.search-button {
+    padding: 16px 32px;
+    background: #ff6433;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-button:hover {
+    background: #e55a2e;
+}
+
+.popular-searches {
+    color: rgba(255, 255, 255, 0.8);  /* Slightly transparent white */
+    font-size: 14px;
+}
+
+.popular-searches a {
+    color: white;  /* Change to white */
+    text-decoration: none;
+    margin-left: 12px;
+}
+
+.popular-searches a:hover {
+    text-decoration: underline;
+}
+
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    padding: 80px 0;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 32px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+    width: 64px;
+    height: 64px;
+    background: #f0f4ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
+.feature-icon i {
+    font-size: 24px;
+    color: #4285f4;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    color: #1a1f36;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 16px;
+}
+
+.how-it-works {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 32px;
+    color: #1a1f36;
+    margin-bottom: 48px;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.step {
+    position: relative;
+    padding: 24px;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #ff6433;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin: 0 auto 16px;
+}
+
+.step h3 {
+    font-size: 20px;
+    color: #1a1f36;
+    margin-bottom: 12px;
+}
+
+.step p {
+    color: #666;
+    font-size: 16px;
+}
+
+.main-footer {
+    background: #1a1f36;
+    color: white;
+    padding: 60px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo img {
+    height: 32px;
+    margin-bottom: 24px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.footer-column a {
+    display: block;
+    color: #a1a1aa;
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .features-section,
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    .hero-section h1 {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+}
+
+.controls-panel {
+    background: #0066FF;
+    padding: 32px 32px 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.controls-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Center the controls */
+    gap: 16px;
+    width: 100%;
+    padding-left: 0;  /* Remove left padding */
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-label {
+    position: absolute;
+    top: -28px;
+    left: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.dropdown-value {
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #1a1f36;
+    background: white;
+    font-size: 14px;
+    min-height: 40px;
+}
+
+.dropdown-value i {
+    margin-left: auto;
+    font-size: 12px;
+    color: #666;
+}
+
+.category-selector {
+    min-width: 250px;
+}
+
+.marketplace-selector {
+    min-width: 160px;
+}
+
+.date-selector {
+    min-width: 200px;
+}
+
+.comparison-selector {
+    min-width: 160px;
+}
+
+.generate-btn {
+    padding: 8px 24px;
+    background: #ff6433;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 8px;
+    transition: background 0.2s;
+}
+
+.generate-btn:hover {
+    background: #e55a2e;
+}
+
+.flag {
+    font-size: 16px;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup-content {
+    position: relative;
+    background: white;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;  /* Add this to contain the scrolling content */
+}
+
+/* Update scrollable container */
+.popup-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+    position: relative;
+    scroll-behavior: smooth;  /* Add smooth scrolling */
+}
+
+/* Keep header at the top */
+.popup-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
+    padding: 24px;
+    border-bottom: 1px solid #eaeaea;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Keep banner at the bottom */
+.popup-banner {
+    position: sticky;
+    bottom: 0;
+    background: #9747FF;  /* Purple color */
+    z-index: 2;
+    border-radius: 0 0 12px 12px;
+    margin-top: auto;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.popup-header {
+    padding: 24px;
+    border-bottom: 1px solid #eaeaea;
+    position: relative;
+}
+
+.popup-header h2 {
+    font-size: 24px;
+    color: #1a1f36;
+    margin-bottom: 8px;
+}
+
+.popup-subtitle {
+    color: #666;
+    font-size: 14px;
+}
+
+.close-popup {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #666;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* Banner Styles */
+.popup-banner {
+    background: #9747FF;  /* Same purple color */
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-top: auto;
+    border-radius: 0 0 12px 12px;
+}
+
+.banner-left {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.banner-text h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;  /* Ensure text is white */
+}
+
+.new-badge {
+    display: none;  /* Hide the new badge */
+}
+
+.banner-text p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.learn-more {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.banner-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.price {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.period {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.get-started-btn {
+    padding: 12px 24px;
+    background: #ff6433;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.data-table {
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.data-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 12px;
+    color: #666;
+    font-weight: normal;
+    border-bottom: 1px solid #eaeaea;
+    white-space: nowrap;
+}
+
+.data-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eaeaea;
+    white-space: nowrap;
+}
+
+.brand-link {
+    color: #0066FF;
+    text-decoration: none;
+}
+
+.change {
+    font-weight: 500;
+}
+
+.change.positive {
+    color: #00C48C;
+}
+
+.change.negative {
+    color: #FF4C4C;
+}
+
+.table-pagination {
+    padding: 16px;
+    text-align: right;
+    color: #666;
+}
+
+/* Add sorting icon styles */
+th i {
+    margin-left: 4px;
+    font-size: 12px;
+}
+
+/* New styles for the comparison dropdown container */
+.comparison-container {
+    display: none;  /* Hide the comparison section */
+}
+
+.comparison-selector {
+    position: relative;
+    width: 200px;  /* Fixed width for the comparison dropdown */
+}
+
+.dropdown-menu {
+    display: none;  /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 300px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 8px;
+    z-index: 1000;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-bottom: 8px;
+}
+
+/* Show dropdown when parent has active class */
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+.category-item {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #1a1f36;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* Parent categories */
+.category-item.parent {
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+/* Subcategories */
+.category-item.sub {
+    padding-left: 32px;
+    color: #666;
+    border-left: 2px solid #eaeaea;
+}
+
+.category-item.sub-sub {
+    padding-left: 48px;
+    color: #666;
+    border-left: 2px solid #eaeaea;
+}
+
+.category-item:hover {
+    background: #f5f5f5;
+    color: #0066FF;
+}
+
+.info-message {
+    background: #e6f4ea;
+    color: #1e4620;
+    padding: 8px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid #d4e9d7;
+    text-align: left;
+}
+
+/* Ensure the dropdown menu shows properly */
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+.marketplace-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #666;  /* Gray color for text */
+}
+
+.marketplace-item.active {
+    color: #0066FF;  /* Blue color for active item */
+    background: transparent;
+}
+
+.marketplace-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.marketplace-item:not(.disabled):hover {
+    background: transparent;
+    color: #0066FF;
+}
+.trial-message {
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #000000;
+    border-top: 1px solid #e6edff;
+    margin: 0;
+    cursor: pointer;
+    text-align: left;
+    background: #f0f4ff;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    opacity: 1;
+}
+
+.trial-message:hover {
+    background: #e6edff;
+}
+
+.coming-soon {
+    margin-left: auto;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Add this to your existing script section */
+document.querySelector('.marketplace-selector').addEventListener('click', function(e) {
+    this.classList.toggle('active');
+    e.stopPropagation();
+});
+
+/* Update the document click handler to close both dropdowns */
+document.addEventListener('click', function() {
+    document.querySelector('.category-selector').classList.remove('active');
+    document.querySelector('.marketplace-selector').classList.remove('active');
+    document.querySelector('.date-selector').classList.remove('active');
+});
+
+.date-picker {
+    width: 200px;
+    padding: 0;
+}
+
+.date-options {
+    padding: 8px 0;
+}
+
+.date-item {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #666;
+    font-size: 14px;
+    text-align: left;
+}
+
+.date-item.active {
+    color: #0066FF;
+    background: #f0f4ff;
+}
+
+.date-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Reuse the same trial message styling */
+.date-picker .trial-message {
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #000000;
+    border-top: 1px solid #e6edff;
+    margin: 0;
+    cursor: pointer;
+    text-align: left;
+    background: #f0f4ff;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    opacity: 1;
+}
+
+.date-picker .trial-message:hover {
+    background: #e6edff;
+}
+
+.subcategory-section {
+    padding: 24px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.section-header h3 {
+    font-size: 20px;
+    color: #1a1f36;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-header h3 i {
+    margin-left: 8px;
+    font-size: 16px;
+    color: white;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.view-toggle {
+    padding: 6px 16px;
+    border: 1px solid #eaeaea;
+    background: white;
+    border-radius: 4px;
+    color: #666;
+    cursor: pointer;
+}
+
+.view-toggle.active {
+    background: #f0f4ff;
+    color: #0066FF;
+    border-color: #0066FF;
+}
+
+.export-btn {
+    padding: 6px 12px;
+    border: 1px solid #eaeaea;
+    background: white;
+    border-radius: 4px;
+    color: #666;
+    cursor: pointer;
+}
+
+.date-range {
+    color: #666;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.date-range i {
+    color: #666;
+}
+
+.subcategory-performance {
+    padding: 24px;
+    border-top: 1px solid #eaeaea;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.section-header h3 {
+    font-size: 20px;
+    color: #1a1f36;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-header i {
+    color: #666;
+    font-size: 16px;
+}
+
+.view-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.view-btn {
+    padding: 6px 12px;
+    border: 1px solid #eaeaea;
+    background: white;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+
+.view-btn.active {
+    background: #f0f4ff;
+    color: #0066FF;
+    border-color: #0066FF;
+}
+
+.export-btn {
+    padding: 6px 12px;
+    border: 1px solid #eaeaea;
+    background: white;
+    border-radius: 4px;
+    color: #666;
+    cursor: pointer;
+}
+
+.subcategory-table {
+    width: 100%;
+    border-collapse: collapse;
+    position: relative;  /* For absolute positioning of overlay */
+}
+
+.subcategory-table th,
+.subcategory-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.subcategory-table th {
+    color: #666;
+    font-weight: normal;
+}
+
+.subcategory-table td:first-child {
+    color: #0066FF;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bar-chart {
+    display: inline-block;
+    width: 100px;
+    height: 4px;
+    background: #eaeaea;
+    margin-left: 8px;
+    border-radius: 2px;
+    position: relative;
+}
+
+.bar-chart::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    background: #0066FF;
+    border-radius: 2px;
+}
+
+.subcategory-table td:not(:first-child) {
+    filter: blur(4px);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.subcategory-table td:first-child {
+    color: #666;  /* Change from blue to gray */
+    opacity: 0.5;  /* Make it look disabled */
+    cursor: not-allowed;
+}
+
+.subcategory-table td:first-child i {
+    color: #666;  /* Make chevron icon gray too */
+}
+
+.bar-chart {
+    opacity: 0.5;
+    filter: blur(4px);
+}
+
+/* Keep table headers clear */
+.subcategory-table th {
+    filter: none;
+    opacity: 1;
+    cursor: default;
+}
+
+.trial-overlay {
+    position: absolute;
+    left: 50%;  /* Center horizontally */
+    top: 50%;   /* Center vertically */
+    transform: translate(-50%, -50%);  /* Perfect centering */
+    background: white;
+    padding: 24px 32px;  /* Bigger padding */
+    border-radius: 8px;
+    z-index: 2;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);  /* Stronger shadow */
+    text-align: center;
+    width: 60%;  /* Take up more width */
+}
+
+.trial-overlay-text {
+    color: #1a1f36;
+    font-size: 16px;  /* Bigger font */
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.trial-overlay-link {
+    color: #0066FF;
+    text-decoration: none;
+    font-weight: 600;  /* Make link more prominent */
+    margin-left: 4px;
+}
+
+.trial-overlay-link:hover {
+    text-decoration: underline;
+}
+
+.table-container {
+    position: relative;
+}
+
+.view-btn, .export-btn {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.view-btn.active {
+    opacity: 0.5;
+    background: #f5f5f5;  /* Less prominent active state */
+    color: #666;
+    border-color: #eaeaea;
+}
+
+/* Optional: Add a tooltip or message on hover */
+.view-btn:hover::after,
+.export-btn:hover::after {
+    content: 'Available with free trial';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.top-products {
+    padding: 24px;
+    border-top: 1px solid #eaeaea;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+.filter-label {
+    color: #666;
+    font-size: 14px;
+}
+
+.filter-options {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-btn {
+    padding: 6px 12px;
+    border: 1px solid #eaeaea;
+    background: white;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.filter-btn.active {
+    background: #f5f5f5;
+    color: #666;
+    border-color: #eaeaea;
+}
+
+.analyze-link {
+    margin-left: auto;
+    color: #0066FF;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.search-box i {
+    color: #666;
+    margin-right: 8px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #666;
+}
+
+.products-table tr.blurred td {
+    filter: blur(4px);
+    opacity: 0.5;
+}
+
+.products-table tr.blurred td:first-child {
+    filter: none;  /* Keep product name/image clear */
+    opacity: 0.5;
+}
+
+.change.positive {
+    color: #34a853;
+}
+
+.change.negative {
+    color: #ea4335;
+}
+
+.table-header {
+    margin-bottom: 16px;
+}
+
+.table-header h3 {
+    font-size: 20px;
+    color: #1a1f36;
+}
+
+.see-all-banner {
+    padding: 12px;
+    background: #f0f4ff;  /* Lighter blue background */
+    border: 1px solid #0066FF;  /* Blue border */
+    border-radius: 4px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #0066FF;  /* Blue text */
+    font-size: 14px;
+    cursor: not-allowed;
+    opacity: 0.7;
+    transition: background-color 0.2s;
+}
+
+.see-all-banner i {
+    font-size: 12px;
+    color: #0066FF;  /* Blue icon */
+}
+
+.revenue-summary {
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    margin-bottom: 24px;
+    display: inline-block;  /* Make the box fit its content */
+    min-width: 300px;  /* Set a minimum width */
+}
+
+.metric-title {
+    color: #1a1f36;
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.metric-details {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.metric-value {
+    font-size: 48px;
+    font-weight: 600;
+    color: #1a1f36;
+    line-height: 1.2;
+}
+
+.metric-change {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.metric-change.positive {
+    color: #00C48C;
+}
+
+/* Icon styles */
+.fa-info-circle {
+    color: #666;
+    font-size: 14px;
+}
+
+.title-with-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding-left: 0;  /* Remove left padding */
+}
+
+.title-logo {
+    height: 40px;
+    width: auto;
+    order: -1;  /* Keep this to ensure logo appears before the title */
+}
+
+/* Update subtitle alignment */
+.hero-section .subtitle {
+    padding-left: 0;
+}
+
+/* Ensure title is centered below logo */
+.hero-section .title-with-logo h1 {
+    margin-bottom: 0;
+    text-align: center;  /* Ensure title is centered */
+}
+
+.trial-message a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.trial-message:hover a {
+    color: #0066FF;
+}
+
+.banner-text h3 i {
+    margin-left: 8px;
+    font-size: 16px;
+    color: white;
+}
+
+.top-brands-section {
+    margin-top: 40px;
+    padding: 0 24px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.top-brands-section .data-table {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+}
+
+.section-title {
+    margin-bottom: 24px;
+    text-align: center;  /* Center align the content */
+}
+
+.section-title h2 {
+    font-size: 24px;
+    color: #1a1f36;
+    margin-bottom: 8px;
+    text-align: center;  /* Ensure title is centered */
+}
+
+.section-title .date-range {
+    color: #666;
+    font-size: 14px;
+    text-align: center;  /* Center the date */
+    display: block;  /* Make it a block element for proper centering */
+}
+
+.revenue-summary {
+    padding: 16px;
+    margin-bottom: 24px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid #eaeaea;
+}
+
+.summary-text {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.summary-text .category,
+.summary-text .value {
+    color: #1a1f36;
+    font-weight: 500;
+}
+
+.main-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #9747FF;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    z-index: 100;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Remove the old results banner */
+.results-banner {
+    display: none;
+}
+
+.category-header {
+    font-size: 16px;
+    color: #1a1f36;
+    margin-bottom: 16px;
+}
+
+.revenue-summary {
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    margin-bottom: 24px;
+}
+
+.metric-title {
+    color: #1a1f36;
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-text {
+    font-size: 16px;
+    color: #1a1f36;
+    margin-bottom: 16px;
+}
+
+/* Center the revenue summary box */
+.revenue-container {
+    width: 100%;
+    text-align: center;  /* Center the inline-block element */
+}
