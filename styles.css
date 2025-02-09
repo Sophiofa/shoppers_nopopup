@@ -3102,3 +3102,9 @@ document.addEventListener('click', function() {
     width: 100%;
     text-align: center;  /* Center the inline-block element */
 }
+
+.blurred-column {
+    filter: blur(4px);
+    opacity: 0.7;
+    user-select: none;
+}

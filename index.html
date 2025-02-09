@@ -41,7 +41,7 @@
     <main class="generator-main">
         <div class="hero-section">
             <div class="title-with-logo">
-                <h1>Category Sales Performance</h1>
+            <h1>Category Sales Performance</h1>
                 <img src="logo.png" alt="Logo" class="title-logo">
             </div>
             <p class="subtitle">The go-to solution for Marketplace Intelligence</p>
@@ -121,7 +121,7 @@
                                 </div>
                                 <div class="trial-message">
                                     <a href="https://account.similarweb.com/journey/registration" target="_blank">
-                                        Start your free trial for all marketplaces
+                                    Start your free trial for all marketplaces
                                     </a>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
                                 </div>
                                 <div class="trial-message">
                                     <a href="https://account.similarweb.com/journey/registration" target="_blank">
-                                        Start your free trial for all date ranges
+                                    Start your free trial for all date ranges
                                     </a>
                                 </div>
                             </div>
@@ -202,47 +202,47 @@
                     <thead>
                         <tr>
                             <th>Brand</th>
-                            <th>Units Sold <i class="fas fa-sort-down"></i></th>
-                            <th>Change</th>
                             <th>Revenue</th>
+                            <th>Change</th>
+                            <th>Units Sold <i class="fas fa-sort-down"></i></th>
                             <th>Change</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><a href="#" class="brand-link">Apple</a></td>
-                            <td>5.8M</td>
-                            <td class="change negative">-11.1%</td>
                             <td>$762.0M</td>
                             <td class="change negative">-13.8%</td>
+                            <td class="blurred-column">5.8M</td>
+                            <td class="blurred-column change negative">-11.1%</td>
                         </tr>
                         <tr>
                             <td><a href="#" class="brand-link">Beats</a></td>
-                            <td>3.4M</td>
-                            <td class="change positive">+97.6%</td>
                             <td>$401.9M</td>
                             <td class="change positive">+60.8%</td>
+                            <td class="blurred-column">3.4M</td>
+                            <td class="blurred-column change positive">+97.6%</td>
                         </tr>
                         <tr>
                             <td><a href="#" class="brand-link">JBL</a></td>
-                            <td>3.0M</td>
-                            <td class="change positive">+21.7%</td>
                             <td>$194.8M</td>
                             <td class="change positive">+45.3%</td>
+                            <td class="blurred-column">3.0M</td>
+                            <td class="blurred-column change positive">+21.7%</td>
                         </tr>
                         <tr>
                             <td><a href="#" class="brand-link">Soundcore</a></td>
-                            <td>2.3M</td>
-                            <td class="change positive">+105.0%</td>
                             <td>$108.4M</td>
                             <td class="change positive">+68.1%</td>
+                            <td class="blurred-column">2.3M</td>
+                            <td class="blurred-column change positive">+105.0%</td>
                         </tr>
                         <tr>
                             <td><a href="#" class="brand-link">Sony</a></td>
-                            <td>1.9M</td>
-                            <td class="change positive">+19.7%</td>
                             <td>$189.8M</td>
                             <td class="change positive">+12.8%</td>
+                            <td class="blurred-column">1.9M</td>
+                            <td class="blurred-column change positive">+19.7%</td>
                         </tr>
                     </tbody>
                 </table>
@@ -250,7 +250,7 @@
 
             <!-- Add See All Brands banner -->
             <div class="see-all-banner">
-                <span>See all brands</span>
+                <span>See 40 more brands with our free tools</span>
                 <i class="fas fa-arrow-right"></i>
             </div>
 
@@ -352,90 +352,97 @@
                         <button class="filter-btn">Reviews</button>
                         <button class="filter-btn">Rating</button>
                     </div>
-                    <a href="#" class="analyze-link">Analyze ASIN list</a>
                 </div>
 
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Filter by title or ASIN">
-                </div>
+                <table class="products-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Brand</th>
+                            <th>Revenue</th>
+                            <th>Change</th>
+                            <th>Product Views</th>
+                            <th>Change</th>
+                            <th>Units Sold <i class="fas fa-chevron-down"></i></th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="product-cell">
+                                <i class="fas fa-battery-full product-icon"></i>
+                                <div class="product-info">
+                                    <div class="product-name">Amazon Basics 8-Pack AA Alkaline High-Performance Batteries...</div>
+                                    <div class="product-id">B0CQMQ6XDB +6</div>
+                                </div>
+                            </td>
+                            <td>...> AA</td>
+                            <td>Amazon Basics</td>
+                            <td>L</td>
+                            <td class="change">N/A</td>
+                            <td>17.1M</td>
+                            <td class="change">N/A</td>
+                            <td class="blurred-column">7.0M</td>
+                            <td class="blurred-column change">N/A</td>
+                        </tr>
+                        <tr>
+                            <td class="product-cell">
+                                <i class="fas fa-shopping-bag product-icon"></i>
+                                <div class="product-info">
+                                    <div class="product-name">Large paper bag fee</div>
+                                    <div class="product-id">B07F4HRVJK +1</div>
+                                </div>
+                            </td>
+                            <td>...> Reusable Grocery Bags</td>
+                            <td>Amazon Go</td>
+                            <td>M</td>
+                            <td class="change negative">-75.3% YoY</td>
+                            <td>1.5M</td>
+                            <td class="change negative">-22.8% YoY</td>
+                            <td class="blurred-column">5.4M</td>
+                            <td class="blurred-column change positive">+69.0% YoY</td>
+                        </tr>
+                        <tr>
+                            <td class="product-cell">
+                                <i class="fas fa-battery-three-quarters product-icon"></i>
+                                <div class="product-info">
+                                    <div class="product-name">Amazon Basics AAA Alkaline High-Performance Batteries...</div>
+                                    <div class="product-id">B0CLVCWVTR +6</div>
+                                </div>
+                            </td>
+                            <td>...> AAA</td>
+                            <td>Amazon Basics</td>
+                            <td>M</td>
+                            <td class="change positive">+609.7% YoY</td>
+                            <td>14.2M</td>
+                            <td class="change positive">+1,131.5% YoY</td>
+                            <td class="blurred-column">5.1M</td>
+                            <td class="blurred-column change positive">+814.4% YoY</td>
+                        </tr>
+                        <tr>
+                            <td class="product-cell">
+                                <i class="fas fa-battery-full product-icon"></i>
+                                <div class="product-info">
+                                    <div class="product-name">Amazon Basics AAA 1.5 Volt Performance Alkaline Batteries - Pack of 36</div>
+                                    <div class="product-id">B00MH4QM1S +3</div>
+                                </div>
+                            </td>
+                            <td>...> AAA</td>
+                            <td>Amazon Basics</td>
+                            <td>S</td>
+                            <td class="change positive">+38.4% YoY</td>
+                            <td>12.3M</td>
+                            <td class="change positive">+52.8% YoY</td>
+                            <td class="blurred-column">4.8M</td>
+                            <td class="blurred-column change positive">+45.2% YoY</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                <!-- Products table with trial overlay -->
-                <div class="table-container">
-                    <div class="trial-overlay">
-                        <span class="trial-overlay-text">
-                            See top products with our
-                            <a href="#" class="trial-overlay-link">free trial</a>
-                        </span>
-                    </div>
-                    <table class="products-table">
-                        <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th>Category</th>
-                                <th>Brand</th>
-                                <th>Units Sold <i class="fas fa-chevron-down"></i></th>
-                                <th>Change</th>
-                                <th>Revenue</th>
-                                <th>Change</th>
-                                <th>Product Views</th>
-                                <th>Change</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="product-cell">
-                                    <img src="battery-image.jpg" alt="AA Battery" class="product-image">
-                                    <div class="product-info">
-                                        <div class="product-name">Amazon Basics 8-Pack AA Alkaline High-Performance Batteries, 1.5 Volt, 10-Year...</div>
-                                        <div class="product-id">B0CQMQ6XDB +6</div>
-                                    </div>
-                                </td>
-                                <td>...> AA</td>
-                                <td>Amazon Basics</td>
-                                <td>7.0M</td>
-                                <td class="change">N/A</td>
-                                <td>$91.4M</td>
-                                <td class="change">N/A</td>
-                                <td>17.1M</td>
-                                <td class="change">N/A</td>
-                            </tr>
-                            <tr class="blurred">
-                                <td class="product-cell">
-                                    <img src="bag-image.jpg" alt="Paper Bag" class="product-image">
-                                    <div class="product-info">
-                                        <div class="product-name">Large paper bag fee</div>
-                                        <div class="product-id">B07F4HRVJK +1</div>
-                                    </div>
-                                </td>
-                                <td>...> Reusable Grocery Bags</td>
-                                <td>Amazon Go</td>
-                                <td>5.4M</td>
-                                <td class="change positive">+69.0% YoY</td>
-                                <td>$44.5M</td>
-                                <td class="change negative">-75.3% YoY</td>
-                                <td>1.5M</td>
-                                <td class="change negative">-22.8% YoY</td>
-                            </tr>
-                            <tr class="blurred">
-                                <td class="product-cell">
-                                    <img src="battery-aaa-image.jpg" alt="AAA Battery" class="product-image">
-                                    <div class="product-info">
-                                        <div class="product-name">Amazon Basics AAA Alkaline High-Performance Batteries, 1.5 Volt, 10-Year...</div>
-                                        <div class="product-id">B0CLVCWVTR +6</div>
-                                    </div>
-                                </td>
-                                <td>...> AAA</td>
-                                <td>Amazon Basics</td>
-                                <td>5.1M</td>
-                                <td class="change positive">+814.4% YoY</td>
-                                <td>$58.2M</td>
-                                <td class="change positive">+609.7% YoY</td>
-                                <td>14.2M</td>
-                                <td class="change positive">+1,131.5% YoY</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="see-all-banner">
+                    <span>See more products with our free trial</span>
+                    <i class="fas fa-arrow-right"></i>
                 </div>
             </div>
         </div>
@@ -483,52 +490,52 @@
                         <thead>
                             <tr>
                                 <th>Brand</th>
-                                <th>Units Sold <i class="fas fa-sort-down"></i></th>
-                                <th>Change</th>
                                 <th>Revenue</th>
+                                <th>Change</th>
+                                <th>Units Sold <i class="fas fa-sort-down"></i></th>
                                 <th>Change</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><a href="#" class="brand-link">Apple</a></td>
-                                <td>5.8M</td>
-                                <td class="change negative">-11.1%</td>
                                 <td>$762.0M</td>
                                 <td class="change negative">-13.8%</td>
+                                <td class="blurred-column">5.8M</td>
+                                <td class="blurred-column change negative">-11.1%</td>
                             </tr>
                             <tr>
                                 <td><a href="#" class="brand-link">Beats</a></td>
-                                <td>3.4M</td>
-                                <td class="change positive">+97.6%</td>
                                 <td>$401.9M</td>
                                 <td class="change positive">+60.8%</td>
+                                <td class="blurred-column">3.4M</td>
+                                <td class="blurred-column change positive">+97.6%</td>
                             </tr>
                             <tr>
                                 <td><a href="#" class="brand-link">JBL</a></td>
-                                <td>3.0M</td>
-                                <td class="change positive">+21.7%</td>
                                 <td>$194.8M</td>
                                 <td class="change positive">+45.3%</td>
+                                <td class="blurred-column">3.0M</td>
+                                <td class="blurred-column change positive">+21.7%</td>
                             </tr>
                             <tr>
                                 <td><a href="#" class="brand-link">Soundcore</a></td>
-                                <td>2.3M</td>
-                                <td class="change positive">+105.0%</td>
                                 <td>$108.4M</td>
                                 <td class="change positive">+68.1%</td>
+                                <td class="blurred-column">2.3M</td>
+                                <td class="blurred-column change positive">+105.0%</td>
                             </tr>
                             <tr>
                                 <td><a href="#" class="brand-link">Sony</a></td>
-                                <td>1.9M</td>
-                                <td class="change positive">+19.7%</td>
                                 <td>$189.8M</td>
                                 <td class="change positive">+12.8%</td>
+                                <td class="blurred-column">1.9M</td>
+                                <td class="blurred-column change positive">+19.7%</td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="see-all-banner">
-                        <span>See all brands</span>
+                        <span>See 40 more brands with our free tools</span>
                         <i class="fas fa-arrow-right"></i>
                     </div>
                 </div>
@@ -631,56 +638,44 @@
                             <button class="filter-btn">Reviews</button>
                             <button class="filter-btn">Rating</button>
                         </div>
-                        <a href="#" class="analyze-link">Analyze ASIN list</a>
-                    </div>
-
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Filter by title or ASIN">
                     </div>
 
                     <div class="table-container">
-                        <div class="trial-overlay">
-                            <span class="trial-overlay-text">
-                                See top products with our
-                                <a href="#" class="trial-overlay-link">free trial</a>
-                            </span>
-                        </div>
                         <table class="products-table">
                             <thead>
                                 <tr>
                                     <th>Product</th>
                                     <th>Category</th>
                                     <th>Brand</th>
-                                    <th>Units Sold <i class="fas fa-chevron-down"></i></th>
-                                    <th>Change</th>
                                     <th>Revenue</th>
                                     <th>Change</th>
                                     <th>Product Views</th>
+                                    <th>Change</th>
+                                    <th>Units Sold <i class="fas fa-chevron-down"></i></th>
                                     <th>Change</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td class="product-cell">
-                                        <img src="battery-image.jpg" alt="AA Battery" class="product-image">
+                                        <i class="fas fa-battery-full product-icon"></i>
                                         <div class="product-info">
-                                            <div class="product-name">Amazon Basics 8-Pack AA Alkaline High-Performance Batteries, 1.5 Volt, 10-Year...</div>
+                                            <div class="product-name">Amazon Basics 8-Pack AA Alkaline High-Performance Batteries...</div>
                                             <div class="product-id">B0CQMQ6XDB +6</div>
                                         </div>
                                     </td>
                                     <td>...> AA</td>
                                     <td>Amazon Basics</td>
-                                    <td>7.0M</td>
-                                    <td class="change">N/A</td>
-                                    <td>$91.4M</td>
+                                    <td>L</td>
                                     <td class="change">N/A</td>
                                     <td>17.1M</td>
                                     <td class="change">N/A</td>
+                                    <td class="blurred-column">7.0M</td>
+                                    <td class="blurred-column change">N/A</td>
                                 </tr>
-                                <tr class="blurred">
+                                <tr>
                                     <td class="product-cell">
-                                        <img src="bag-image.jpg" alt="Paper Bag" class="product-image">
+                                        <i class="fas fa-shopping-bag product-icon"></i>
                                         <div class="product-info">
                                             <div class="product-name">Large paper bag fee</div>
                                             <div class="product-id">B07F4HRVJK +1</div>
@@ -688,29 +683,46 @@
                                     </td>
                                     <td>...> Reusable Grocery Bags</td>
                                     <td>Amazon Go</td>
-                                    <td>5.4M</td>
-                                    <td class="change positive">+69.0% YoY</td>
-                                    <td>$44.5M</td>
+                                    <td>M</td>
                                     <td class="change negative">-75.3% YoY</td>
                                     <td>1.5M</td>
                                     <td class="change negative">-22.8% YoY</td>
+                                    <td class="blurred-column">5.4M</td>
+                                    <td class="blurred-column change positive">+69.0% YoY</td>
                                 </tr>
-                                <tr class="blurred">
+                                <tr>
                                     <td class="product-cell">
-                                        <img src="battery-aaa-image.jpg" alt="AAA Battery" class="product-image">
+                                        <i class="fas fa-battery-three-quarters product-icon"></i>
                                         <div class="product-info">
-                                            <div class="product-name">Amazon Basics AAA Alkaline High-Performance Batteries, 1.5 Volt, 10-Year...</div>
+                                            <div class="product-name">Amazon Basics AAA Alkaline High-Performance Batteries...</div>
                                             <div class="product-id">B0CLVCWVTR +6</div>
                                         </div>
                                     </td>
                                     <td>...> AAA</td>
                                     <td>Amazon Basics</td>
-                                    <td>5.1M</td>
-                                    <td class="change positive">+814.4% YoY</td>
-                                    <td>$58.2M</td>
+                                    <td>M</td>
                                     <td class="change positive">+609.7% YoY</td>
                                     <td>14.2M</td>
                                     <td class="change positive">+1,131.5% YoY</td>
+                                    <td class="blurred-column">5.1M</td>
+                                    <td class="blurred-column change positive">+814.4% YoY</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-cell">
+                                        <i class="fas fa-battery-full product-icon"></i>
+                                        <div class="product-info">
+                                            <div class="product-name">Amazon Basics AAA 1.5 Volt Performance Alkaline Batteries - Pack of 36</div>
+                                            <div class="product-id">B00MH4QM1S +3</div>
+                                        </div>
+                                    </td>
+                                    <td>...> AAA</td>
+                                    <td>Amazon Basics</td>
+                                    <td>S</td>
+                                    <td class="change positive">+38.4% YoY</td>
+                                    <td>12.3M</td>
+                                    <td class="change positive">+52.8% YoY</td>
+                                    <td class="blurred-column">4.8M</td>
+                                    <td class="blurred-column change positive">+45.2% YoY</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -758,7 +770,7 @@
 
         dropdowns.forEach(dropdown => {
             dropdown.addEventListener('click', function(e) {
-                e.stopPropagation();
+            e.stopPropagation();
                 
                 // Close all other dropdowns first
                 dropdowns.forEach(otherDropdown => {
@@ -768,8 +780,8 @@
                 });
                 
                 // Toggle current dropdown
-                this.classList.toggle('active');
-            });
+            this.classList.toggle('active');
+        });
         });
 
         // Close all dropdowns when clicking outside
