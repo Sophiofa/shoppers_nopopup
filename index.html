@@ -95,27 +95,27 @@
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="dropdown-menu">
-                                <div class="marketplace-item active">
+                                <div class="marketplace-item">
                                     <span class="flag">🇺🇸</span>
                                     amazon.com
                                 </div>
-                                <div class="marketplace-item disabled">
+                                <div class="marketplace-item">
                                     <span class="flag">🇬🇧</span>
                                     amazon.co.uk
                                 </div>
-                                <div class="marketplace-item disabled">
+                                <div class="marketplace-item">
                                     <span class="flag">🇮🇹</span>
                                     amazon.it
                                 </div>
-                                <div class="marketplace-item disabled">
+                                <div class="marketplace-item">
                                     <span class="flag">🇫🇷</span>
                                     amazon.fr
                                 </div>
-                                <div class="marketplace-item disabled">
+                                <div class="marketplace-item">
                                     <span class="flag">🇩🇪</span>
                                     amazon.de
                                 </div>
-                                <div class="marketplace-item disabled">
+                                <div class="marketplace-item">
                                     <span class="flag">🇨🇦</span>
                                     amazon.ca
                                 </div>
@@ -130,15 +130,15 @@
                         <div class="date-selector dropdown">
                             <div class="dropdown-label">For</div>
                             <div class="dropdown-value">
-                                Last 12 Months
+                                Last 3 Months
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="dropdown-menu date-picker">
                                 <div class="date-options">
                                     <div class="date-item disabled">Last 1 Month</div>
-                                    <div class="date-item disabled">Last 3 Months</div>
+                                    <div class="date-item active">Last 3 Months</div>
                                     <div class="date-item disabled">Last 6 Months</div>
-                                    <div class="date-item active">Last 12 Months</div>
+                                    <div class="date-item disabled">Last 12 Months</div>
                                     <div class="date-item disabled">Last 18 Months</div>
                                     <div class="date-item disabled">Last 24 Months</div>
                                     <div class="date-item disabled">Last 36 Months</div>
@@ -175,21 +175,57 @@
                 <span class="date-range">Jan 2024 - Dec 2024</span>
             </div>
 
-            <!-- Add category header above revenue summary -->
-            <div class="revenue-container">
+            <div class="metrics-row">
+                <!-- Revenue Box (existing) -->
                 <div class="revenue-summary">
-                    <div class="category-text">
-                        In Electronics > Headphones category
-                    </div>
-                    <div class="metric-title">
-                        Revenue <i class="fas fa-info-circle"></i>
-                    </div>
+                    <div class="category-text">In Electronics > Headphones category</div>
+                    <div class="metric-title">Revenue <i class="fas fa-info-circle"></i></div>
                     <div class="metric-details">
-                        <i class="far fa-calendar"></i> Feb 2024 - Jan 2025 
+                        <i class="far fa-calendar"></i> Jan 2024 - Dec 2024
                     </div>
                     <div class="metric-value">
-                        >$500B
-                        <div class="metric-change positive">↑5.8%</div>
+                        >$500B <span class="metric-change positive">↑5.8%</span>
+                    </div>
+                </div>
+
+                <!-- 1P/3P Share Box -->
+                <div class="revenue-summary">
+                    <div class="metric-title">1P/3P Share</div>
+                    <div class="formula-text">revenue of 1p or 3p / total revenue</div>
+                    <div class="metric-details">
+                        <i class="far fa-calendar"></i> Jan 2024 - Dec 2024
+                    </div>
+                    <div class="share-stats">
+                        <div class="share-item">
+                            <span class="share-label">1P Share</span>
+                            <span class="share-value">42%</span>
+                            <span class="share-change positive">↑2.3%</span>
+                        </div>
+                        <div class="share-item">
+                            <span class="share-label">3P Share</span>
+                            <span class="share-value">58%</span>
+                            <span class="share-change negative">↓2.3%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OSS Chart Box -->
+                <div class="revenue-summary">
+                    <div class="metric-title">OSS Organic vs. Paid</div>
+                    <div class="metric-details">
+                        <i class="far fa-calendar"></i> Jan 2024 - Dec 2024
+                    </div>
+                    <div class="donut-chart" style="margin-top: 2px;">
+                        <div class="percentages">
+                            <div class="percentage-item">
+                                <span class="percentage">98%</span>
+                                <span class="label">Organic</span>
+                            </div>
+                            <div class="percentage-item">
+                                <span class="percentage light">2%</span>
+                                <span class="label">Paid</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -197,163 +233,229 @@
             <div class="data-table">
                 <div class="table-header">
                     <h3>Top Brands</h3>
+                    <div class="helper-text">We will show top 5 brands, order by change in points</div>
                 </div>
                 <table>
                     <thead>
                         <tr>
                             <th>Brand</th>
-                            <th>Revenue</th>
+                            <th>Revenue Share</th>
+                            <th>
+                                Change
+                                <div class="subheader">YoY Change in Points</div>
+                            </th>
+                            <th>Product Views</th>
                             <th>Change</th>
-                            <th>Units Sold <i class="fas fa-sort-down"></i></th>
+                            <th>
+                                CVR
+                                <div class="subheader">units sold/views</div>
+                            </th>
+                            <th>Change</th>
+                            <th>
+                                ASP
+                                <div class="subheader">revenue/unit sold</div>
+                            </th>
                             <th>Change</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><a href="#" class="brand-link">Apple</a></td>
-                            <td>$762.0M</td>
-                            <td class="change negative">-13.8%</td>
-                            <td class="blurred-column">5.8M</td>
-                            <td class="blurred-column change negative">-11.1%</td>
+                            <td>0.44%</td>
+                            <td class="change negative">-0.03pp</td>
+                            <td>12.5M</td>
+                            <td class="change negative">-8.2%</td>
+                            <td>46.4%</td>
+                            <td class="change negative">-3.1%</td>
+                            <td>$131</td>
+                            <td class="change negative">-3.2%</td>
                         </tr>
                         <tr>
                             <td><a href="#" class="brand-link">Beats</a></td>
-                            <td>$401.9M</td>
-                            <td class="change positive">+60.8%</td>
-                            <td class="blurred-column">3.4M</td>
-                            <td class="blurred-column change positive">+97.6%</td>
+                            <td>0.77%</td>
+                            <td class="change positive">+0.20pp</td>
+                            <td class="blurred-column">14.2M</td>
+                            <td class="blurred-column change positive">+12.3%</td>
+                            <td class="blurred-column">38.2%</td>
+                            <td class="blurred-column change positive">+5.1%</td>
+                            <td class="blurred-column">$98</td>
+                            <td class="blurred-column change positive">+2.8%</td>
                         </tr>
                         <tr>
                             <td><a href="#" class="brand-link">JBL</a></td>
-                            <td>$194.8M</td>
-                            <td class="change positive">+45.3%</td>
-                            <td class="blurred-column">3.0M</td>
+                            <td>0.07%</td>
+                            <td class="change positive">+0.02pp</td>
+                            <td class="blurred-column">8.1M</td>
                             <td class="blurred-column change positive">+21.7%</td>
+                            <td class="blurred-column">35.6%</td>
+                            <td class="blurred-column change positive">+4.2%</td>
+                            <td class="blurred-column">$89</td>
+                            <td class="blurred-column change positive">+1.9%</td>
                         </tr>
                         <tr>
                             <td><a href="#" class="brand-link">Soundcore</a></td>
-                            <td>$108.4M</td>
-                            <td class="change positive">+68.1%</td>
-                            <td class="blurred-column">2.3M</td>
+                            <td>0.59%</td>
+                            <td class="change negative">-0.35pp</td>
+                            <td class="blurred-column">6.2M</td>
                             <td class="blurred-column change positive">+105.0%</td>
+                            <td class="blurred-column">42.1%</td>
+                            <td class="blurred-column change negative">-2.5%</td>
+                            <td class="blurred-column">$112</td>
+                            <td class="blurred-column change negative">-1.8%</td>
                         </tr>
                         <tr>
                             <td><a href="#" class="brand-link">Sony</a></td>
-                            <td>$189.8M</td>
-                            <td class="change positive">+12.8%</td>
-                            <td class="blurred-column">1.9M</td>
+                            <td>0.04%</td>
+                            <td class="change negative">-0pp</td>
+                            <td class="blurred-column">4.8M</td>
                             <td class="blurred-column change positive">+19.7%</td>
+                            <td class="blurred-column">39.8%</td>
+                            <td class="blurred-column change positive">+3.4%</td>
+                            <td class="blurred-column">$105</td>
+                            <td class="blurred-column change positive">+2.2%</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <!-- Add See All Brands banner -->
             <div class="see-all-banner">
                 <span>See 40 more brands with our free tools</span>
                 <i class="fas fa-arrow-right"></i>
             </div>
 
-            <!-- Add Performance by Subcategory -->
-            <div class="subcategory-performance">
+            <div class="channels-breakdown">
                 <div class="section-header">
-                    <h3>Performance by Subcategory <i class="fas fa-info-circle"></i></h3>
-                    <div class="view-controls">
-                        <button class="view-btn active">Total</button>
-                        <button class="view-btn">Share</button>
-                        <button class="export-btn"><i class="fas fa-table"></i></button>
-                    </div>
+                    <h3>Channels Breakdown & Performance</h3>
                 </div>
                 
-                <div class="table-container">
-                    <div class="trial-overlay">
-                        <span class="trial-overlay-text">
-                            See subcategory performance with our
-                            <a href="#" class="trial-overlay-link">free trial</a>
-                        </span>
-                    </div>
-                    <table class="subcategory-table">
-                        <thead>
-                            <tr>
-                                <th>Category</th>
-                                <th>Units Sold <i class="fas fa-chevron-down"></i></th>
-                                <th>Change</th>
-                                <th>Revenue</th>
-                                <th>Change</th>
-                                <th>Product Views</th>
-                                <th>Change</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><i class="fas fa-chevron-right"></i> Clothing, Shoes & Jewelry</td>
-                                <td>2.7B <div class="bar-chart"></div></td>
-                                <td class="change positive">+9.6%</td>
-                                <td>$75.0B <div class="bar-chart"></div></td>
-                                <td class="change positive">+5.2%</td>
-                                <td>32.7B <div class="bar-chart"></div></td>
-                                <td class="change positive">+15.9%</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-chevron-right"></i> Home & Kitchen</td>
-                                <td>2.4B <div class="bar-chart"></div></td>
-                                <td class="change positive">+8.0%</td>
-                                <td>$89.9B <div class="bar-chart"></div></td>
-                                <td class="change positive">+5.1%</td>
-                                <td>36.8B <div class="bar-chart"></div></td>
-                                <td class="change positive">+4.2%</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-chevron-right"></i> Health & Household</td>
-                                <td>2.2B <div class="bar-chart"></div></td>
-                                <td class="change positive">+17.3%</td>
-                                <td>$46.0B <div class="bar-chart"></div></td>
-                                <td class="change positive">+13.8%</td>
-                                <td>9.4B <div class="bar-chart"></div></td>
-                                <td class="change positive">+8.2%</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-chevron-right"></i> Beauty & Personal Care</td>
-                                <td>1.8B <div class="bar-chart"></div></td>
-                                <td class="change positive">+15.9%</td>
-                                <td>$32.7B <div class="bar-chart"></div></td>
-                                <td class="change positive">+13.5%</td>
-                                <td>11.2B <div class="bar-chart"></div></td>
-                                <td class="change positive">+12.1%</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-chevron-right"></i> Grocery & Gourmet Food</td>
-                                <td>1.7B <div class="bar-chart"></div></td>
-                                <td class="change positive">+20.0%</td>
-                                <td>$21.1B <div class="bar-chart"></div></td>
-                                <td class="change positive">+15.7%</td>
-                                <td>3.9B <div class="bar-chart"></div></td>
-                                <td class="change positive">+1.1%</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="chart-wrapper">
+                    <div id="chart-container" style="height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory-performance">
+            <div class="section-header">
+                <div class="title-group">
+                    <h3>Performance by Subcategory</h3>
+                    <div class="helper-text">We will show 5 items, and up to the fifth level</div>
                 </div>
             </div>
 
-            <!-- Add Top Products section -->
-            <div class="top-products">
-                <div class="section-header">
-                    <h3>Top Products <i class="fas fa-info-circle"></i></h3>
-                    <div class="export-btn"><i class="fas fa-table"></i></div>
+            <div class="table-container">
+                <div class="trial-overlay">
+                    <span class="trial-overlay-text">
+                        See subcategory performance with our
+                        <a href="#" class="trial-overlay-link">free trial</a>
+                    </span>
                 </div>
+                <table class="subcategory-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Units Sold <i class="fas fa-chevron-down"></i></th>
+                            <th>Change</th>
+                            <th>Revenue</th>
+                            <th>Change</th>
+                            <th>Product Views</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="parent-row">
+                            <td><i class="fas fa-chevron-down expandable expanded"></i> Amazon Devices & Accessories > Amazon Devices</td>
+                            <td>2.7B <div class="bar-chart"></div></td>
+                            <td class="change positive">+9.6%</td>
+                            <td>$75.0B <div class="bar-chart"></div></td>
+                            <td class="change positive">+5.2%</td>
+                            <td>32.7B <div class="bar-chart"></div></td>
+                            <td class="change positive">+15.9%</td>
+                        </tr>
+                        <tr class="child-row">
+                            <td><i class="fas fa-chevron-right"></i> &nbsp;&nbsp;Fire TV</td>
+                            <td>1.2B <div class="bar-chart"></div></td>
+                            <td class="change positive">+7.3%</td>
+                            <td>$32.1B <div class="bar-chart"></div></td>
+                            <td class="change positive">+4.8%</td>
+                            <td>15.3B <div class="bar-chart"></div></td>
+                            <td class="change positive">+8.2%</td>
+                        </tr>
+                        <tr class="child-row">
+                            <td><i class="fas fa-chevron-right"></i> &nbsp;&nbsp;Smart Home Security & Lighting</td>
+                            <td>0.8B <div class="bar-chart"></div></td>
+                            <td class="change positive">+12.1%</td>
+                            <td>$21.5B <div class="bar-chart"></div></td>
+                            <td class="change positive">+6.2%</td>
+                            <td>12.1B <div class="bar-chart"></div></td>
+                            <td class="change positive">+11.5%</td>
+                        </tr>
 
-                <div class="filters">
-                    <div class="filter-label">Filter By:</div>
-                    <div class="filter-options">
-                        <button class="filter-btn active">Units Sold</button>
-                        <button class="filter-btn">Revenue</button>
-                        <button class="filter-btn">Product Views</button>
-                        <button class="filter-btn">Avg. Listing Price</button>
-                        <button class="filter-btn">Reviews</button>
-                        <button class="filter-btn">Rating</button>
-                    </div>
+                        <tr class="parent-row">
+                            <td><i class="fas fa-chevron-right expandable"></i> Amazon Devices & Accessories > Amazon Device Accessories</td>
+                            <td>2.4B <div class="bar-chart"></div></td>
+                            <td class="change positive">+8.0%</td>
+                            <td>$89.9B <div class="bar-chart"></div></td>
+                            <td class="change positive">+5.1%</td>
+                            <td>36.8B <div class="bar-chart"></div></td>
+                            <td class="change positive">+4.2%</td>
+                        </tr>
+
+                        <tr class="parent-row">
+                            <td><i class="fas fa-chevron-right expandable"></i> Electronics > Audio & Video</td>
+                            <td>2.1B <div class="bar-chart"></div></td>
+                            <td class="change positive">+11.2%</td>
+                            <td>$68.3B <div class="bar-chart"></div></td>
+                            <td class="change positive">+7.8%</td>
+                            <td>28.4B <div class="bar-chart"></div></td>
+                            <td class="change positive">+9.1%</td>
+                        </tr>
+
+                        <tr class="parent-row">
+                            <td><i class="fas fa-chevron-right expandable"></i> Electronics > Computers & Accessories</td>
+                            <td>1.9B <div class="bar-chart"></div></td>
+                            <td class="change positive">+6.5%</td>
+                            <td>$82.1B <div class="bar-chart"></div></td>
+                            <td class="change positive">+4.2%</td>
+                            <td>25.7B <div class="bar-chart"></div></td>
+                            <td class="change positive">+5.8%</td>
+                        </tr>
+
+                        <tr class="parent-row">
+                            <td><i class="fas fa-chevron-right expandable"></i> Electronics > Camera & Photo</td>
+                            <td>1.5B <div class="bar-chart"></div></td>
+                            <td class="change positive">+9.3%</td>
+                            <td>$55.4B <div class="bar-chart"></div></td>
+                            <td class="change positive">+6.1%</td>
+                            <td>22.3B <div class="bar-chart"></div></td>
+                            <td class="change positive">+7.4%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="top-products">
+            <div class="section-header">
+                <div class="title-group">
+                    <h3>Top viewed products</h3>
+                    <div class="helper-text">We will show top 5 products by views</div>
                 </div>
+                <div class="export-btn"><i class="fas fa-table"></i></div>
+            </div>
 
+            <div class="filters">
+                <div class="filter-label">Filter By:</div>
+                <div class="filter-options">
+                    <button class="filter-btn active">Units Sold</button>
+                    <button class="filter-btn">Revenue</button>
+                    <button class="filter-btn">Product Views</button>
+                    <button class="filter-btn">Avg. Listing Price</button>
+                    <button class="filter-btn">Reviews</button>
+                    <button class="filter-btn">Rating</button>
+                </div>
+            </div>
+
+            <div class="table-container">
                 <table class="products-table">
                     <thead>
                         <tr>
@@ -439,30 +541,9 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <div class="see-all-banner">
-                    <span>See more products with our free trial</span>
-                    <i class="fas fa-arrow-right"></i>
-                </div>
             </div>
         </div>
-
-        <!-- Move banner outside and to bottom of main -->
-        <div class="main-banner">
-            <div class="banner-left">
-                <div class="banner-icon">
-                    <i class="fas fa-sparkles"></i>
-                </div>
-                <div class="banner-text">
-                    <h3>Find out More with our Shoppers solution <i class="fas fa-rocket"></i></h3>
-                    <p>Have an holistic view of the shopper's journey, including your site, competitors and marketplaces</p>
-                </div>
-            </div>
-            <div class="banner-right">
-                <button class="get-started-btn">Start your free trial</button>
-            </div>
-        </div>
-    </main>
+    </div>
 
     <!-- Popup -->
     <div class="popup" id="resultsPopup">
@@ -474,7 +555,6 @@
             </div>
 
             <div class="popup-scroll">
-                <!-- First table section -->
                 <div class="data-table">
                     <div class="revenue-summary">
                         <div class="summary-text">
@@ -490,47 +570,80 @@
                         <thead>
                             <tr>
                                 <th>Brand</th>
-                                <th>Revenue</th>
+                                <th>Revenue Share</th>
+                                <th>
+                                    Change
+                                    <div class="subheader">YoY Change in Points</div>
+                                </th>
+                                <th>Product Views</th>
                                 <th>Change</th>
-                                <th>Units Sold <i class="fas fa-sort-down"></i></th>
+                                <th>
+                                    CVR
+                                    <div class="subheader">units sold/views</div>
+                                </th>
+                                <th>Change</th>
+                                <th>
+                                    ASP
+                                    <div class="subheader">revenue/unit sold</div>
+                                </th>
                                 <th>Change</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><a href="#" class="brand-link">Apple</a></td>
-                                <td>$762.0M</td>
-                                <td class="change negative">-13.8%</td>
-                                <td class="blurred-column">5.8M</td>
-                                <td class="blurred-column change negative">-11.1%</td>
+                                <td>0.44%</td>
+                                <td class="change negative">-0.03pp</td>
+                                <td>12.5M</td>
+                                <td class="change negative">-8.2%</td>
+                                <td>46.4%</td>
+                                <td class="change negative">-3.1%</td>
+                                <td>$131</td>
+                                <td class="change negative">-3.2%</td>
                             </tr>
                             <tr>
                                 <td><a href="#" class="brand-link">Beats</a></td>
-                                <td>$401.9M</td>
-                                <td class="change positive">+60.8%</td>
-                                <td class="blurred-column">3.4M</td>
-                                <td class="blurred-column change positive">+97.6%</td>
+                                <td>0.77%</td>
+                                <td class="change positive">+0.20pp</td>
+                                <td class="blurred-column">14.2M</td>
+                                <td class="blurred-column change positive">+12.3%</td>
+                                <td class="blurred-column">38.2%</td>
+                                <td class="blurred-column change positive">+5.1%</td>
+                                <td class="blurred-column">$98</td>
+                                <td class="blurred-column change positive">+2.8%</td>
                             </tr>
                             <tr>
                                 <td><a href="#" class="brand-link">JBL</a></td>
-                                <td>$194.8M</td>
-                                <td class="change positive">+45.3%</td>
-                                <td class="blurred-column">3.0M</td>
+                                <td>0.07%</td>
+                                <td class="change positive">+0.02pp</td>
+                                <td class="blurred-column">8.1M</td>
                                 <td class="blurred-column change positive">+21.7%</td>
+                                <td class="blurred-column">35.6%</td>
+                                <td class="blurred-column change positive">+4.2%</td>
+                                <td class="blurred-column">$89</td>
+                                <td class="blurred-column change positive">+1.9%</td>
                             </tr>
                             <tr>
                                 <td><a href="#" class="brand-link">Soundcore</a></td>
-                                <td>$108.4M</td>
-                                <td class="change positive">+68.1%</td>
-                                <td class="blurred-column">2.3M</td>
+                                <td>0.59%</td>
+                                <td class="change negative">-0.35pp</td>
+                                <td class="blurred-column">6.2M</td>
                                 <td class="blurred-column change positive">+105.0%</td>
+                                <td class="blurred-column">42.1%</td>
+                                <td class="blurred-column change negative">-2.5%</td>
+                                <td class="blurred-column">$112</td>
+                                <td class="blurred-column change negative">-1.8%</td>
                             </tr>
                             <tr>
                                 <td><a href="#" class="brand-link">Sony</a></td>
-                                <td>$189.8M</td>
-                                <td class="change positive">+12.8%</td>
-                                <td class="blurred-column">1.9M</td>
+                                <td>0.04%</td>
+                                <td class="change negative">-0pp</td>
+                                <td class="blurred-column">4.8M</td>
                                 <td class="blurred-column change positive">+19.7%</td>
+                                <td class="blurred-column">39.8%</td>
+                                <td class="blurred-column change positive">+3.4%</td>
+                                <td class="blurred-column">$105</td>
+                                <td class="blurred-column change positive">+2.2%</td>
                             </tr>
                         </tbody>
                     </table>
@@ -540,14 +653,11 @@
                     </div>
                 </div>
 
-                <!-- Keep only one subcategory performance section -->
                 <div class="subcategory-performance">
                     <div class="section-header">
-                        <h3>Performance by Subcategory <i class="fas fa-info-circle"></i></h3>
-                        <div class="view-controls">
-                            <button class="view-btn active">Total</button>
-                            <button class="view-btn">Share</button>
-                            <button class="export-btn"><i class="fas fa-table"></i></button>
+                        <div class="title-group">
+                            <h3>Performance by Subcategory</h3>
+                            <div class="helper-text">We will show 5 items, and up to the fifth level</div>
                         </div>
                     </div>
                     
@@ -571,8 +681,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><i class="fas fa-chevron-right"></i> Clothing, Shoes & Jewelry</td>
+                                <tr class="parent-row">
+                                    <td><i class="fas fa-chevron-down expandable expanded"></i> Amazon Devices & Accessories > Amazon Devices</td>
                                     <td>2.7B <div class="bar-chart"></div></td>
                                     <td class="change positive">+9.6%</td>
                                     <td>$75.0B <div class="bar-chart"></div></td>
@@ -580,8 +690,27 @@
                                     <td>32.7B <div class="bar-chart"></div></td>
                                     <td class="change positive">+15.9%</td>
                                 </tr>
-                                <tr>
-                                    <td><i class="fas fa-chevron-right"></i> Home & Kitchen</td>
+                                <tr class="child-row">
+                                    <td><i class="fas fa-chevron-right"></i> &nbsp;&nbsp;Fire TV</td>
+                                    <td>1.2B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+7.3%</td>
+                                    <td>$32.1B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+4.8%</td>
+                                    <td>15.3B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+8.2%</td>
+                                </tr>
+                                <tr class="child-row">
+                                    <td><i class="fas fa-chevron-right"></i> &nbsp;&nbsp;Smart Home Security & Lighting</td>
+                                    <td>0.8B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+12.1%</td>
+                                    <td>$21.5B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+6.2%</td>
+                                    <td>12.1B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+11.5%</td>
+                                </tr>
+
+                                <tr class="parent-row">
+                                    <td><i class="fas fa-chevron-right expandable"></i> Amazon Devices & Accessories > Amazon Device Accessories</td>
                                     <td>2.4B <div class="bar-chart"></div></td>
                                     <td class="change positive">+8.0%</td>
                                     <td>$89.9B <div class="bar-chart"></div></td>
@@ -589,42 +718,47 @@
                                     <td>36.8B <div class="bar-chart"></div></td>
                                     <td class="change positive">+4.2%</td>
                                 </tr>
-                                <tr>
-                                    <td><i class="fas fa-chevron-right"></i> Health & Household</td>
-                                    <td>2.2B <div class="bar-chart"></div></td>
-                                    <td class="change positive">+17.3%</td>
-                                    <td>$46.0B <div class="bar-chart"></div></td>
-                                    <td class="change positive">+13.8%</td>
-                                    <td>9.4B <div class="bar-chart"></div></td>
-                                    <td class="change positive">+8.2%</td>
+
+                                <tr class="parent-row">
+                                    <td><i class="fas fa-chevron-right expandable"></i> Electronics > Audio & Video</td>
+                                    <td>2.1B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+11.2%</td>
+                                    <td>$68.3B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+7.8%</td>
+                                    <td>28.4B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+9.1%</td>
                                 </tr>
-                                <tr>
-                                    <td><i class="fas fa-chevron-right"></i> Beauty & Personal Care</td>
-                                    <td>1.8B <div class="bar-chart"></div></td>
-                                    <td class="change positive">+15.9%</td>
-                                    <td>$32.7B <div class="bar-chart"></div></td>
-                                    <td class="change positive">+13.5%</td>
-                                    <td>11.2B <div class="bar-chart"></div></td>
-                                    <td class="change positive">+12.1%</td>
+
+                                <tr class="parent-row">
+                                    <td><i class="fas fa-chevron-right expandable"></i> Electronics > Computers & Accessories</td>
+                                    <td>1.9B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+6.5%</td>
+                                    <td>$82.1B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+4.2%</td>
+                                    <td>25.7B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+5.8%</td>
                                 </tr>
-                                <tr>
-                                    <td><i class="fas fa-chevron-right"></i> Grocery & Gourmet Food</td>
-                                    <td>1.7B <div class="bar-chart"></div></td>
-                                    <td class="change positive">+20.0%</td>
-                                    <td>$21.1B <div class="bar-chart"></div></td>
-                                    <td class="change positive">+15.7%</td>
-                                    <td>3.9B <div class="bar-chart"></div></td>
-                                    <td class="change positive">+1.1%</td>
+
+                                <tr class="parent-row">
+                                    <td><i class="fas fa-chevron-right expandable"></i> Electronics > Camera & Photo</td>
+                                    <td>1.5B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+9.3%</td>
+                                    <td>$55.4B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+6.1%</td>
+                                    <td>22.3B <div class="bar-chart"></div></td>
+                                    <td class="change positive">+7.4%</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- After the subcategory performance section -->
                 <div class="top-products">
                     <div class="section-header">
-                        <h3>Top Products <i class="fas fa-info-circle"></i></h3>
+                        <div class="title-group">
+                            <h3>Top viewed products</h3>
+                            <div class="helper-text">We will show top 5 products by views</div>
+                        </div>
                         <div class="export-btn"><i class="fas fa-table"></i></div>
                     </div>
 
@@ -728,30 +862,39 @@
                         </table>
                     </div>
                 </div>
-
-                <!-- Bottom Banner -->
-                <div class="popup-banner">
-                    <div class="banner-left">
-                        <div class="banner-icon">
-                            <i class="fas fa-sparkles"></i>
-                        </div>
-                        <div class="banner-text">
-                            <h3>Find out More with our Shoppers solution <i class="fas fa-rocket"></i></h3>
-                            <p>Have an holistic view of the shopper's journey, including your site, competitors and marketplaces</p>
-                        </div>
-                    </div>
-                    <div class="banner-right">
-                        <button class="get-started-btn">Start your free trial</button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Remove the click handler since we don't need it anymore
+        // Existing dropdown management
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                // Close all other dropdowns first
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                this.classList.toggle('active');
+            });
+        });
+
+        // Close all dropdowns when clicking outside
+        document.addEventListener('click', function() {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        });
+
+        // Generate button scroll behavior
         document.querySelector('.generate-btn').addEventListener('click', function() {
-            // Just scroll to the section
             document.querySelector('.top-brands-section').scrollIntoView({ behavior: 'smooth' });
         });
 
@@ -765,30 +908,119 @@
             }
         });
 
-        // New dropdown management
-        const dropdowns = document.querySelectorAll('.dropdown');
-
-        dropdowns.forEach(dropdown => {
-            dropdown.addEventListener('click', function(e) {
+        // Add tooltip functionality
+        document.querySelectorAll('.tooltip-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
             e.stopPropagation();
                 
-                // Close all other dropdowns first
-                dropdowns.forEach(otherDropdown => {
-                    if (otherDropdown !== dropdown) {
-                        otherDropdown.classList.remove('active');
-                    }
-                });
+                // Remove any existing tooltips
+                const existingTooltip = document.querySelector('.tooltip');
+                if (existingTooltip) {
+                    existingTooltip.remove();
+                }
                 
-                // Toggle current dropdown
-            this.classList.toggle('active');
-        });
+                // Create new tooltip
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                tooltip.textContent = this.dataset.tooltip;
+                
+                // Position tooltip
+                const rect = this.getBoundingClientRect();
+                tooltip.style.top = rect.bottom + window.scrollY + 5 + 'px';
+                tooltip.style.left = rect.left + window.scrollX + 'px';
+                
+                document.body.appendChild(tooltip);
+            });
         });
 
-        // Close all dropdowns when clicking outside
-        document.addEventListener('click', function() {
-            dropdowns.forEach(dropdown => {
-                dropdown.classList.remove('active');
-            });
+        // Close tooltip when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('tooltip-trigger')) {
+                const tooltip = document.querySelector('.tooltip');
+                if (tooltip) {
+                    tooltip.remove();
+                }
+            }
+        });
+    </script>
+
+    <!-- Add helper text under headers -->
+    <style>
+    .column-helper {
+        font-size: 11px;
+        color: #666;
+        font-weight: normal;
+        display: block;
+    }
+    </style>
+
+    <th>
+        CVR
+        <span class="column-helper">units sold/views</span>
+    </th>
+    <th>
+        ASP
+        <span class="column-helper">revenue/unit sold</span>
+    </th>
+
+    <!-- Add Highcharts library before the closing body tag -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script>
+        Highcharts.chart('chart-container', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: null
+            },
+            subtitle: {
+                text: null
+            },
+            xAxis: {
+                categories: ['On site search org.', 'OSS paid', 'Refferal', 'Social'],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                max: 60,
+                title: {
+                    text: null
+                },
+                labels: {
+                    format: '{value}%'
+                },
+                tickPositions: [0, 20, 40, 60]
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Apple',
+                color: '#4285f4',
+                data: [52, null, null, null]
+            }, {
+                name: 'Beats',
+                color: '#34a853',
+                data: [48, null, null, null]
+            }, {
+                name: 'JBL',
+                color: '#fbbc05',
+                data: [42, null, null, null]
+            }, {
+                name: 'Soundcore',
+                color: '#ea4335',
+                data: [38, null, null, null]
+            }, {
+                name: 'Sony',
+                color: '#5c6bc0',
+                data: [35, null, null, null]
+            }],
+            credits: {
+                enabled: false
+            }
         });
     </script>
 </body>
