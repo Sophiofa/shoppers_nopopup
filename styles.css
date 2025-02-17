@@ -2666,8 +2666,7 @@ th i {
 
 .subcategory-table td:not(:first-child) {
     filter: blur(4px);
-    opacity: 0.5;
-    cursor: not-allowed;
+    opacity: 0.7;
 }
 
 .subcategory-table td:first-child {
@@ -3542,4 +3541,44 @@ th {
     font-style: italic;
     margin-top: 8px;
     padding-left: 16px;
+}
+
+/* Update the blur effect for non-category columns */
+.subcategory-table td:not(:first-child) {
+    filter: blur(4px);
+    opacity: 0.7;
+}
+
+/* Keep all headers and first column clear */
+.subcategory-table th,
+.subcategory-table td:first-child {
+    filter: none;
+    opacity: 1;
+    position: relative;
+    background: white;
+    z-index: 2;
+}
+
+/* Remove blur from table headers */
+.subcategory-table th {
+    filter: none !important;
+    opacity: 1 !important;
+    background: white;
+    z-index: 2;
+    color: #1a1f36;
+    font-weight: 500;
+}
+
+/* Keep blur only on table data cells */
+.subcategory-table td:not(:first-child) {
+    filter: blur(4px);
+    opacity: 0.7;
+}
+
+/* Keep first column clear */
+.subcategory-table td:first-child {
+    filter: none;
+    opacity: 1;
+    background: white;
+    z-index: 2;
 }
