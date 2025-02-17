@@ -52,7 +52,7 @@
                         <div class="category-selector dropdown">
                             <div class="dropdown-label">Category</div>
                             <div class="dropdown-value">
-                                Electronics > Headphones
+                                All Categories
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="dropdown-menu">
@@ -166,6 +166,11 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Add this after the controls-panel div -->
+            <div class="default-settings-info">
+                By default users will enter with "All Categories", "amazon.com", Last 3 Months
+            </div>
         </div>
 
         <div class="top-brands-section">
@@ -233,7 +238,7 @@
             <div class="data-table">
                 <div class="table-header">
                     <h3>Top Brands</h3>
-                    <div class="helper-text">We will show top 5 brands, order by change in points</div>
+                    <div class="helper-text">We will show top 5 brands, order by change in points from high to low</div>
                 </div>
                 <table>
                     <thead>
@@ -262,7 +267,7 @@
                         <tr>
                             <td><a href="#" class="brand-link">Apple</a></td>
                             <td>0.44%</td>
-                            <td class="change negative">-0.03pp</td>
+                            <td class="change positive">+0.40pp</td>
                             <td>12.5M</td>
                             <td class="change negative">-8.2%</td>
                             <td>46.4%</td>
@@ -319,13 +324,16 @@
             </div>
 
             <div class="see-all-banner">
-                <span>See 40 more brands with our free tools</span>
+                <span>Get total numbers of results if we can</span>
                 <i class="fas fa-arrow-right"></i>
             </div>
 
             <div class="channels-breakdown">
                 <div class="section-header">
-                    <h3>Channels Breakdown & Performance</h3>
+                    <div class="title-group">
+                        <h3>Top Brands Channels Breakdown & Performance</h3>
+                        <div class="helper-text">We will show, for each of the 5 top brands, only data for the on site search organic</div>
+                    </div>
                 </div>
                 
                 <div class="chart-wrapper">
@@ -593,7 +601,7 @@
                             <tr>
                                 <td><a href="#" class="brand-link">Apple</a></td>
                                 <td>0.44%</td>
-                                <td class="change negative">-0.03pp</td>
+                                <td class="change positive">+0.40pp</td>
                                 <td>12.5M</td>
                                 <td class="change negative">-8.2%</td>
                                 <td>46.4%</td>
@@ -977,7 +985,7 @@
                 text: null
             },
             xAxis: {
-                categories: ['On site search org.', 'OSS paid', 'Refferal', 'Social'],
+                categories: ['On site search organic', 'OSS paid', 'Refferal', 'Social'],
                 crosshair: true
             },
             yAxis: {
